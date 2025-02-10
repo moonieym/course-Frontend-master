@@ -2,11 +2,50 @@
 
 let a = "a"
 
-//matematicas
+//matematicos
 
 //suma
 
 let suma = 2 + 3
+console.log(suma)
 
 //resta 
+let resta = 2 - 3
+console.log(resta)
 
+//multiplicacion
+let multiplicacion = 2 * 3
+console.log(multiplicacion)
+
+//division
+let division = 2 / 3
+console.log(division)
+
+//modulo
+let modulo = 2 % 3
+console.log(modulo)
+
+//combinados
+
+//incremento
+let i = 0
+i = i + 1
+i = i + 1
+i = i + 1
+
+i += 1
+i++
+console.log(i)
+
+//decremento
+let j = 100
+
+j = j - 1
+j = j - 1
+j = j - 1
+
+j -= 1
+j--
+console.log(j)
+
+variable = "variable"
