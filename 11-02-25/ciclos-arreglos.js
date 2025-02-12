@@ -1,50 +1,53 @@
-let calificaciones = [9.0,8.1,7.6,6.0,9.5,8.,8.9,.5];
+let calificaciones = [9.0,8.1,7.6,6.0,9.5,8.0,8.9,0.5];
 
 // calcular promedio del grupo
 
+let sumatoria = 0;
+let i = 0;
 for(let i = 0;i<calificaciones.length;i++) {
     sumatoria = sumatoria + calificaciones[i];
     // sumatoria += calificaciones[i]
 }
-console.log("promedio")
+console.log("promedio");
 console.log(sumatoria / calificaciones.length);
 
 // equivalencia sin for
 
-// let calificaciones = [9.0,8.1,7.6,6.0,9.5,8.,8.9,.5];
+// let calificaciones = [9.0,8.1,7.6,6.0,9.5,8.0,8.9,0.5];
 // let sumatoria = 0;
 
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[0];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[1];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[2];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[3];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[4];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[5];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[6];
-    i++
+    i++;
 }
 if(i<calificaciones.length) {
     sumatoria = sumatoria + calificaciones[7];
-    i++
+    i++;
 }
 
 
+ 
