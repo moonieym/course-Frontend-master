@@ -23,13 +23,18 @@ console.log(a);
 
 // sort -> ordena
 
-let b = [4,1,6,8,2,5,6,7];
+let b = [4,1,6,8,2,5,3,7];
 b.sort();
 console.log(b);
 
 // map -> modificar todos los elementos
 
-let c = [1,2,3,4,5];
+let c = [1,2,3,4,5]
+
+funcion_de_mapear = function(elemento){
+    return elemento * 2;
+}
+
 let d = c.map(function(elemento){
     return elemento * 2;
 });
