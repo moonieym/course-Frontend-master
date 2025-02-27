@@ -8,7 +8,7 @@ nombre_de_la_funcion(parametros)
 
 //ejemplo
 function saludar() {
-    console.log("hola")
+    console.log("Hola")
 }
 
 saludar()
@@ -18,39 +18,39 @@ saludar()
 
 //ejemplo con parametros
 function saludar(nombre) {
-    // let nombre = "monse"
-    console.log("hola " + nombre)
+    // let nombre = "Monse"
+    console.log("Hola " + nombre)
 }
 
-saludar("monse")
+saludar("Monse")
 
-function multiplicar(a, b) {
-    let c = a * b
+function multiplicarNumeros(a,b) {
+    let c = a*b
     console.log(c)
 }
 
-multiplicar(2, 5)
+multiplicarNumeros(2, 5)
 
 //return
 function saludar(nombre) {
-    console.log("hola " + nombre)
+    console.log("Hola: " + nombre)
 }
 
 function pasar_a_mayusculas(nombre) {
     return nombre.toUpperCase()
 }
 
-let nombre_minusculas = "Monse"
+let nombre_minusculas = "monse"
 
 //pasar a mayusculas
 let nombre_mayusculas = pasar_a_mayusculas(nombre_minusculas)
-console.log(nombre_mayusculas)
+saludar(nombre_mayusculas)
 
 //scope
 let numero_cien = 100
 
 function multiplicar_por_cien(x, numero_cien) {
-    return x * numero_cien
+    return x*numero_cien
 }
 
 let result = multiplicar_por_cien(5, 400)
@@ -81,21 +81,21 @@ escuela()
 
 // usando funciones como parametros
 function saludar_con_estilo(nombre, estilo) {
-    return "hola:" + estilo(nombre)
+    return "Hola: " + estilo(nombre)
 }
 
 function formal(nombre) {
-    return "Sr./Sra." + nombre
+    return "Sr./Sra. " + nombre
 }
 
 function informal(nombre) {
-    return "compa" + nombre
+    return "compa " + nombre
 }
 
 result = formal("Nestor")
 console.log(result)
 
-result = saludar_con_estilo("Nestor", informal)
+result = saludar_con_estilo("Monse", informal)
 console.log(result)
 
 // usar funciones anonimas
@@ -104,7 +104,7 @@ result = saludar_con_estilo(mi_nombre, formal)
 console.log(result)
 
 result = saludar_con_estilo(mi_nombre, function(nombre) {
-    return "Hace mucho que no te veia, como te ha ido?" + nombre
+    return "Hace mucho que no te veia, como te ha ido? " + nombre
 })
 console.log(result)
 
@@ -127,18 +127,18 @@ let mi_funct = a => a*a
 */
 
 // ejemplos de funciones flecha
-let suma = function(a, b) {
+let suma = function(a,b) {
     return a + b
 }
 
-let resta = (a, b) => {
+let resta = (a,b) => {
     return a - b
 }
 
-let multiplicar = (a, b) => a * b
+let multiplicar = (a,b) => a*b
 
-let al_cuadrado = a => a * a
+let al_cuadrado = a => a*a
 
 let operarar = (op, val_a, val_b) => op(val_a, val_b)
 
-operarar((a, b) => a + b, 5, 10)
+operarar((a,b) => a + b, 5, 10)
