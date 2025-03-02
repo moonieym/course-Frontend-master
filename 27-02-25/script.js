@@ -23,6 +23,45 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // carga comentarios guardados
+    const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    // agrega los comentarios guardados
+    function renderComments() {
+        commentList.innerHTML = ""; // Limpiar la lista de comentarios  
+        savedComments.forEach((comment) => {
+            addCommentToDOM(comment.text, comment.timestamp);
+        });
+        
+    }
+
+    // agrega un comentario al DOM
+    function addCommentToDOM(text, timestamp) {
+        const commentElement = document.createElement("div");
+        commentElement.classList.add("comment");
+
+        commentElement.innerHTML = `
+            <p>${text}</p>
+            <span>${timestamp}</span>
+            <button class="delete-button">🗑️</button>
+        `;
+
+        commentList.appendChild(commentElement);
+
+        // elimina el comentario del DOM y del almacenamiento local
+        commentElement.querySelector(".delete-button").addEventListener("click", () => {
+            const index = savedComments.findIndex(c => c.text === text && c.timestamp === timestamp);
+            if (index !== -1) {
+                savedComments.splice(index, 1); // elimina array
+                localStorage.setItem("comments", JSON.stringify(savedComments));
+            }
+            commentElement.remove();
+        });
+    }
+
+    // carga los comentarios guardados
+    renderComments();
+
     // agrega el comentario
     form.addEventListener("submit", (event) => {
         event.preventDefault(); // Evita el envío del formulario
@@ -36,19 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const now = new Date();
         const timestamp = now.toLocaleString();
 
-        commentElement.innerHTML = `
-            <p>${commentText}</p>
-            <span>${timestamp}</span>
-            <button class="delete-button">🗑️</button>
-        `;
+        // agregar comentario al array y actualizar el almacenamiento local
+        savedComments.push({ text: commentText, timestamp });
+        localStorage.setItem("comments", JSON.stringify(savedComments));
 
-        commentList.appendChild(commentElement);
+        // mostrar el nuevo comentario en la pagina
+        addCommentToDOM(commentText, timestamp);
 
-        commentInput.value = ""; // Limpia el campo despues de enviar
-
-        // Elimina el comentario al hacer clic en el botón de eliminar
-        commentElement.querySelector(".delete-button").addEventListener("click", () => {
-            commentElement.remove();
-        });
+        commentInput.value = ""; // limpia el campo despues de enviar
     });
 });
