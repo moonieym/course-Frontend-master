@@ -19,7 +19,7 @@ class Persona {
 
 // metodos estaticos
 
-let monse = new Persona("Monse", "Bustos", 1.80);
+let monse = new Persona("Monse", "Bustos", 1.50);
 
 // metodo regular
 console.log(monse.nombre_en_mayusculas());
