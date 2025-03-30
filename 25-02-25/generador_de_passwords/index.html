@@ -10,17 +10,17 @@
     <div class="container">
         <h2>Generador de contraseñas</h2>
         <div class="password-box">
-            <input type="text" id="password"> 
-            <button id="copyBtn">📋</button>
+            <input type="text" id="password" readonly>
         </div>
         <div class="controls">
+            <button id="copyBtn">📋</button>
             <label for="length">Longitud: <span id="lengthValue">10</span></label>
             <input type="range" id="length" min="8" max="20" value="10">
             <div class="options">
                 <label><input type="checkbox" id="uppercase" checked> Mayúsculas</label>
                 <label><input type="checkbox" id="lowercase" checked> Minúsculas</label>
                 <label><input type="checkbox" id="numbers" checked> Números</label>
-                <label><input type="checkbox" id="symbols" checked> Símbolos</label>
+                <label><input type="checkbox" id="symbols"> Símbolos</label>
             </div>
             <div class="strength">Seguridad: <span id="strengthLevel">MEDIA</span></div>
             <button id="generateBtn">GENERAR</button>
