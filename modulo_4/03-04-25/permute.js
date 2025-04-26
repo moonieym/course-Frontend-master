@@ -6,11 +6,13 @@ function permute (str, path = '', result = []) {
     } else {
         for(let i = 0; i < str.length; i++) {
             const remaining = str.slice(0, 1) + str.slice(i + 1);
+            console.log(remaining);
+            permute(remaining, path + str[i], result);
         }
     }
     return result;
 }
 
-const result = permute('abc');
+const result = permute('abcde').length;
 console.log(result);
 
