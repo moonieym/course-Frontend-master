@@ -3,29 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>API Rick & Morty</title>
-  <style>
-    #data-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 20px;
-    }
-    .character {
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
-      width: 150px;
-    }
-    .character img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-    }
-  </style>
+  <title>Rick & Morty - Personajes</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/64px-Rick_and_Morty.svg.png" type="image/png">
+    <!-- Estilo CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font estilo futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <h1>Rick & Morty - Personajes</h1>
   <button id="fetch-btn">Cargar con Fetch</button>
   <button id="axios-btn">Cargar con Axios</button>
@@ -33,6 +19,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="app.js"></script>
+  
 </body>
 </html>
 
