@@ -10,6 +10,8 @@ const Game: React.FC = () => {
     const [guess, setGuess] = useState<string>('');
     const [message, setMessage] = useState<string>('');
     const [isCorrect, setIsCorrect] = useState<boolean>(false);
+    const [attempts, setAttempts] = useState<number>(0);
+    const [history, setHistory] = useState<number[]>([]);
 
     const handleGuess = () => {
         const num = Number(guess);
@@ -18,6 +20,9 @@ const Game: React.FC = () => {
         setMessage('Por favor, ingresa un número válido entre 1 y 100.');
         return;
         }
+
+        setAttempts((prev) => prev + 1);
+        setHistory((prev) => [...prev, num]);
 
         if (num === secretNumber) {
             setMessage('¡Correcto! 🎉 Adivinaste el número.');
@@ -34,6 +39,8 @@ const Game: React.FC = () => {
         setGuess('');
         setMessage('');
         setIsCorrect(false);
+        setAttempts(0);
+        setHistory([]);
     };
 
     return ( 
@@ -45,6 +52,19 @@ const Game: React.FC = () => {
                 isCorrect={isCorrect} 
             />
             <Message text={message} />
+            <p>Intentos: {attempts}</p>
+
+            {history.length > 0 && (
+                <div>
+                    <p>Historial de intentos:</p>
+                    <ul>
+                        {history.map((num, index) => (
+                            <li key={index}>#{index + 1}: {num}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
             { isCorrect && <RestartButton restartGame={restartGame} /> }
         </div>
     );
